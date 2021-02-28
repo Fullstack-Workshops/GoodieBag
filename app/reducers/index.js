@@ -22,7 +22,7 @@ export const fetchCandies = () => {
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_CANDIES:
-      return {...state, candies: [...state, action.candies]}
+      return {...state, candies: action.candies}
     default:
       return state
   }
