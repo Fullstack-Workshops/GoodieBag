@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { noExtendLeft } from 'sequelize/types/lib/operators';
 
 const initialState = {
   candies: [],
@@ -42,7 +41,7 @@ const rootReducer = (state = initialState, action) => {
     case GET_CANDIES:
       return {...state, candies: action.candies}
     case GET_CANDY:
-      return action.candy
+      return {...state, candy: action.candy}
     default:
       return state
   }

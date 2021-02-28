@@ -1,6 +1,7 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import Candies from './Candies';
+import SingleCandy from './SingleCandy';
 
 const Root = () => {
   return (
@@ -15,7 +16,8 @@ const Root = () => {
         <div id="main-container">
           <h1>Welcome to the Goodie Bag!</h1>
           <Switch>
-            <Route path="/candies" component={Candies} />
+            <Route exact path="/candies" component={Candies} />
+            <Route path="/candies/:id" component={SingleCandy} />
           </Switch>
         </div>
       </main>
